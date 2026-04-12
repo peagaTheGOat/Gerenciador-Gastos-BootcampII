@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/GerenciadorGastos.ConsoleApp/GerenciadorGastos.ConsoleApp.csproj" />
+    <ProjectReference Include="../src/GerenciadorGastos.ConsoleApp/GerenciadorGastos.ConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>
