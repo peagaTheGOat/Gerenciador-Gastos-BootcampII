@@ -26,6 +26,7 @@ Através de um terminal simples, o usuário pode adicionar uma despesa em segund
 
 ## Estrutura do Projeto
 
+```text
 Gerenciador-Gastos-BootcampII/        <-- Você está aqui =)
 ├── .github/
 │   └── workflows/
