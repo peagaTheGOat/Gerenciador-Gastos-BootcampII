@@ -1,0 +1,32 @@
+name: CI do Gerenciador de Gastos
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fazer Checkout do Código
+      uses: actions/checkout@v4
+
+    - name: Configurar o .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.x' # Ou a versão que você estiver usando no VS 2026
+
+    - name: Restaurar Dependências
+      run: dotnet restore
+
+    - name: Rodar Linting (Análise Estática)
+      run: dotnet format --verify-no-changes
+      
+    - name: Compilar Projeto
+      run: dotnet build --no-restore
+
+    - name: Executar Testes Automatizados
+      run: dotnet test --no-build --verbosity normal
