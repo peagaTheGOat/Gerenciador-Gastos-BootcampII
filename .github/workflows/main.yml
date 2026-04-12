@@ -1,0 +1,30 @@
+name: CI do Gerenciador de Gastos
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fazer Checkout do Código
+      uses: actions/checkout@v4
+
+    - name: Configurar o .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.x'
+
+    - name: Restaurar Dependências
+      # O asterisco faz ele procurar em todas as subpastas
+      run: dotnet restore **/*.csproj 
+
+    - name: Compilar Projeto
+      run: dotnet build **/*.csproj --no-restore
+
+    - name: Executar Testes Automatizados
+      run: dotnet test **/*.csproj --no-build --verbosity normal
