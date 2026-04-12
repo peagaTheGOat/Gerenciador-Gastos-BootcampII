@@ -24,10 +24,27 @@ Através de um terminal simples, o usuário pode adicionar uma despesa em segund
 * **Testes:** xUnit
 * **CI/CD:** GitHub Actions (Build e Testes automatizados (Linting recém adicionado))
 
+## Estrutura do Projeto
+
+Gerenciador-Gastos-BootcampII/        <-- Você está aqui =)
+├── .github/
+│   └── workflows/
+│       └── main.yml                  # Pipeline de CI
+├── src/
+│   └── GerenciadorGastos.ConsoleApp/
+│       ├── GerenciadorGastos.ConsoleApp.csproj  # Manifesto de dependências e versão
+│       ├── Program.cs                # Ponto de entrada (CLI)
+│       ├── Gerenciador.cs            # Lógica principal e regras
+│       └── Gasto.cs                  # Modelo de dados
+├── Tests/
+│   ├── GerenciadorGastos.Tests.csproj # Configuração do projeto de testes
+│   └── GerenciadorTestes.cs          # Testes unitários (xUnit)
+└── README.md                         # Documentação principal
+
 ## Como Instalar e Executar
 
 **Pré-requisitos:** Ter o [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) instalado na máquina.
 
-1. Clone este repositório:
+## Clone este repositório:
    ```bash
    git clone [https://github.com/peagaTheGOat/Gerenciador-Gastos-BootcampII.git](https://github.com/peagaTheGOat/Gerenciador-Gastos-BootcampII.git)
