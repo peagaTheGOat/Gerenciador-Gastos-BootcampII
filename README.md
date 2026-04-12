@@ -41,6 +41,7 @@ Gerenciador-Gastos-BootcampII/        <-- Você está aqui =)
 │   ├── GerenciadorGastos.Tests.csproj # Configuração do projeto de testes
 │   └── GerenciadorTestes.cs          # Testes unitários (xUnit)
 └── README.md                         # Documentação principal
+```
 
 ## Como Instalar e Executar
 
