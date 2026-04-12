@@ -20,8 +20,11 @@ jobs:
         dotnet-version: '8.x'
 
     - name: Restaurar Dependências
-      # O asterisco faz ele procurar em todas as subpastas
       run: dotnet restore **/*.csproj 
+
+    - name: Executar Linting (Análise Estática)
+      # Verifica se o código segue os padrões de formatação do C#
+      run: dotnet format **/*.csproj --verify-no-changes
 
     - name: Compilar Projeto
       run: dotnet build **/*.csproj --no-restore
