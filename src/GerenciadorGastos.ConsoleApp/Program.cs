@@ -1,9 +1,16 @@
 using GerenciadorGastos.ConsoleApp;
 
 var gerenciador = new Gerenciador();
+var servicoCotacao = new ServicoCotacao();
 bool executando = true;
 
-Console.WriteLine("=== Gerenciador de Gastos Pessoais (v1.0.0) ===");
+Console.WriteLine("=== Gerenciador de Gastos Pessoais (v1.1.0) ===");
+Console.WriteLine("Carregando cotação do dia");
+decimal cotacaoAtual = await servicoCotacao.ObterCotacaoDolarAsync();
+if (cotacaoAtual > 0)
+    Console.WriteLine($"[INFO] O Dólar hoje está: R$ {cotacaoAtual:F2}");
+else
+    Console.WriteLine("[INFO] Não foi possível carregar a cotação do Dólar (sem conexão).");
 
 while (executando)
 {
